@@ -18,7 +18,7 @@ function App() {
   const [userData, setUserData] = useState(null);
 
   // Sustituye con tu Client ID real de Google Cloud Console
-  const clientId = "941946385897-47nhbn0q4ji9f3jj3i4dkaqbblfk16t4.apps.googleusercontent.com";
+  const clientId = "941946385897-fg0819kmq26rhoj75giiq6v9lupbcsp4.apps.googleusercontent.com";
 
   const onSuccess = (response) => {
     console.log("Login Success:", response);
