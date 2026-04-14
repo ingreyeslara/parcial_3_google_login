@@ -4,12 +4,33 @@ import profile from './profile.webp';
 import './App.css';
 
 // Este es el componente al que redirigiremos
+
+const handleRedirect = () => {
+  // Aquí podrías agregar lógica adicional
+  window.open("https://ingreyeslara.atlassian.net/jira/software/projects/SIB/boards/445?atlOrigin=eyJpIjoiMDEyNjU0MzMzYjgxNDFlYTg0MTRjNjMyNDllNmNjZmYiLCJwIjoiaiJ9", "_blank", "noopener,noreferrer");
+};
 const Dashboard = ({ user }) => (
   <div className="App-header">
     <img src={profile} width="15%" style={{ borderRadius: '50%' }} />
-    <h1>Bienvenida, {user.name}</h1>
-    <p>Has iniciado sesión con éxito.</p>
-    <button onClick={() => window.location.reload()}>Cerrar Sesión</button>
+    <h1>Bienvenido(a), {user.name}</h1>
+    <h2>EVALUACIÓN PARCIAL 3</h2>
+    <div style={{ padding: '20px' }}>
+    
+      
+      {/* Opción con etiqueta de anclaje simple */}
+      <a 
+        href="https://www.medikt.com.mx/practicas/ers.pdf" 
+        download="Mi_Manual_Personalizado.pdf"
+        className="download-link"
+      >
+        <button>DESCARGAR DOCUMENTO ERS DEL PROYECTO</button>
+      </a>
+      
+    </div>
+    <button onClick={handleRedirect}>
+    TABLERO JIRA PROYECTO SIBA
+    </button><br></br>
+    <button onClick={() => window.location.reload()}>CERRRAR SESIÓN PARCIAL 3</button>
   </div>
 );
 
@@ -23,7 +44,7 @@ function App() {
   const onSuccess = (response) => {
     console.log("Login Success:", response);
     // Aquí normalmente decodificarías el JWT (token) para obtener los datos del usuario
-    // Por ahora, simularemos que ya tenemos los datos:
+  
     setUserData({ name: "Fernanda Sosa" }); 
     setIsLoggedIn(true);
   };
